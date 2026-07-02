@@ -13,9 +13,34 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background:linear-gradient(135deg, #DADADA 0%, #BBBBBB 100%);
+            background: linear-gradient(135deg, #171b17 0%, #0d0f0d 100%);
             min-height: 100vh;
             padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .corner-decor {
+            position: fixed;
+            width: 380px;
+            height: 380px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .corner-decor.tl { top: 0; left: 0; }
+        .corner-decor.tr { top: 0; right: 0; transform: scaleX(-1); }
+        .corner-decor.bl { bottom: 0; left: 0; transform: scaleY(-1); }
+        .corner-decor.br { bottom: 0; right: 0; transform: scale(-1, -1); }
+
+        .corner-decor svg { width: 100%; height: 100%; display: block; }
+
+        .corner-decor polyline {
+            fill: none;
+            stroke: #4ADE80;
+            stroke-width: 1.6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .container {
@@ -25,6 +50,8 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             max-width: 1000px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .header {
@@ -340,10 +367,44 @@
             .level-bar-container {
                 height: 35px;
             }
+
+            .corner-decor {
+                width: 220px;
+                height: 220px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="corner-decor tl">
+        <svg viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="180,-20 30,140 220,300" opacity="0.9" />
+            <polyline points="-20,150 100,260 -20,390" opacity="0.6" />
+            <polyline points="220,330 130,400" opacity="0.45" />
+        </svg>
+    </div>
+    <div class="corner-decor tr">
+        <svg viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="180,-20 30,140 220,300" opacity="0.9" />
+            <polyline points="-20,150 100,260 -20,390" opacity="0.6" />
+            <polyline points="220,330 130,400" opacity="0.45" />
+        </svg>
+    </div>
+    <div class="corner-decor bl">
+        <svg viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="180,-20 30,140 220,300" opacity="0.9" />
+            <polyline points="-20,150 100,260 -20,390" opacity="0.6" />
+            <polyline points="220,330 130,400" opacity="0.45" />
+        </svg>
+    </div>
+    <div class="corner-decor br">
+        <svg viewBox="0 0 380 380" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="180,-20 30,140 220,300" opacity="0.9" />
+            <polyline points="-20,150 100,260 -20,390" opacity="0.6" />
+            <polyline points="220,330 130,400" opacity="0.45" />
+        </svg>
+    </div>
+
     <div class="container">
         <div class="header">
             <div class="logo-container">
@@ -463,3 +524,5 @@
     </script>
 </body>
 </html>
+      
+      
